@@ -2,14 +2,20 @@
 {% block content %}
     {% for item in news %}
         <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ item.author }}</a>
-              <small class="text-muted">{{ item.created_at|date:"Y-m-d H:i" }}</small>
+            <div class="media-body">
+                <div class="card-header">
+                    <a class="mr-2" href="#">{{ item.author }}</a>
+                    <small>{{ item.created_at|date:"Y-m-d H:i" }}</small>
+                </div>
+                <div class="card-body">
+                    <h2><a class="article-title" href="#">{{ item.title }}</a></h2>
+                    <p class="article-content">{{ item.content }}</p>
+                    <a href="#" class="btn btn-primary">Read more...</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Категория: {{ item.category }}</small>
+                </div>
             </div>
-            <h2><a class="article-title" href="#">{{ item.title }}</a></h2>
-            <p class="article-content">{{ item.content }}</p>
-          </div>
         </article>
     {% endfor %}
 {% endblock content %}
