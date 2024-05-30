@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 {% block content %}
     {% for item in news %}
         <article class="media content-section">
@@ -28,7 +28,8 @@
         </article>
     {% endfor %}
 {% endblock content %}
-{% block categories %}
+
+{% block sidebar %}
     <div class="content-section">
         <h3>Разделы</h3>
         <ul class="list-group">
@@ -36,6 +37,5 @@
                 <a href="/category/{{ item.pk }}" class="list-group-item list-group-item-light">{{ item.title }}</a>
             {% endfor %}
         </ul>
-        </p>
     </div>
 {% endblock %}
