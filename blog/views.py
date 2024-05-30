@@ -24,5 +24,6 @@ def get_category(request, category_id):
     }
     return render(request, 'blog/category.html', context)
 
+
 def about(request):
     return render(request, 'blog/about.html', {'title': 'О клубе Python Bytes'})
